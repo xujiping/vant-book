@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <van-row class="book" gutter="20">
+    <van-row class="book">
       <van-col span="8" class="left">
         <van-image fit="full" :src="book.image" />
       </van-col>
@@ -8,14 +8,14 @@
         <p>{{ book.name }}</p>
         <p>{{ book.author }}</p>
       </van-col>
-      <van-col span="24">
-        <van-button plain type="primary">TXT下载</van-button>
-      </van-col>
     </van-row>
     <van-row class="intro">
       <van-col span="24">
         <div v-html="book.intro"></div>
       </van-col>
+    </van-row>
+    <van-row class="download">
+      <van-button type="primary" size="large" round="true">TXT下载</van-button>
     </van-row>
   </div>
 </template>
@@ -38,8 +38,7 @@ export default {
       }
     };
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
@@ -55,9 +54,18 @@ p {
   margin-bottom: 10px;
 }
 
-.intro{
+.intro {
   padding: 20px 10px;
   background-color: #fff;
   margin-top: 20px;
+}
+
+.download {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 5px 0;
 }
 </style>

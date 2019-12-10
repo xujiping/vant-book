@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import {Swipe, SwipeItem, Lazyload, Row, Col, Image, Panel, Grid, GridItem, Skeleton, Button, NavBar, Toast} from 'vant'
+import {
+    Swipe, SwipeItem, Lazyload, Row, Col, Image,
+    Panel, Grid, GridItem, Skeleton, Button, NavBar,
+    Toast, Search
+} from 'vant'
 
 Vue.config.productionTip = false
 
@@ -18,6 +22,7 @@ Vue.use(Swipe)
     .use(Button)
     .use(NavBar)
     .use(Toast)
+    .use(Search)
 
 new Vue({
     render: h => h(App),

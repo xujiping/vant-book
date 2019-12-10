@@ -10,3 +10,8 @@ export const httpBooks = (params) => {
   return fetchGet('/dobi-fast/gjBook/page', params)
 }
 
+// 查询书籍信息
+export const httpBookInfo = (bookId) => {
+  return fetchGet('/dobi-fast/gjBook/info/' + bookId)
+}
+

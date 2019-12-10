@@ -1,6 +1,10 @@
 <template>
   <div>
-    <van-search placeholder="请输入搜索关键词" v-model="value" background="#986724" />
+    <van-search
+      placeholder="请输入搜索关键词"
+      v-model="value"
+      background="#986724"
+    />
 
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(carousel, index) in carousels" :key="index">
@@ -16,7 +20,7 @@
           span="8"
           v-for="(item, index) in books"
           :key="index"
-          @click="toDetail"
+          @click="toDetail(item.id)"
         >
           <van-image id="book-image" :src="item.cover"></van-image>
           <p id="bookName">{{ item.bookName }}</p>
@@ -82,8 +86,8 @@ export default {
         }
       });
     },
-    toDetail() {
-      this.$router.push({ path: "/detail" });
+    toDetail(id) {
+      this.$router.push({ path: "/detail", query: { bookId: id } });
     }
   }
 };

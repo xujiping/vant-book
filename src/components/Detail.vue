@@ -6,12 +6,12 @@
       </van-col>
       <van-col span="16">
         <p>{{ book.bookName }}</p>
-        <p>{{ book.gjAuthor.name }}</p>
+        <p>{{ book.author }}</p>
       </van-col>
     </van-row>
     <van-row class="intro">
       <van-col span="24">
-        <div v-html="book.bookIntroduce"></div>
+        <div v-html="book.intro"></div>
       </van-col>
     </van-row>
     <van-row class="download">
@@ -21,8 +21,7 @@
 </template>
 
 <script>
-import { httpBookInfo } from "@/api/api";
-
+import { books } from "@/data/book";
 
 export default {
   name: "Detail",
@@ -31,25 +30,12 @@ export default {
   },
   data() {
     return {
-      book: {}
+      book: books[this.$route.query.bookId - 1]
     };
   },
-  created(){
-    this.getBookInfo()
+  created() {
   },
-  methods: {
-    getBookInfo(){
-      const that = this;
-      window.console.log('bookId=' + this.$route.query.bookId)
-      httpBookInfo(this.$route.query.bookId).then(response => {
-        if (response.data.code == 0) {
-          that.book = response.data.data;
-        } else {
-          that.$toast(response.data.msg);
-        }
-      })
-    }
-  }
+  methods: {}
 };
 </script>
 

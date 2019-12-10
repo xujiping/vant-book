@@ -24,7 +24,7 @@
         >
           <van-image id="book-image" :src="item.cover"></van-image>
           <p id="bookName">{{ item.bookName }}</p>
-          <p id="bookAuthor">{{ item.gjAuthor.name }}</p>
+          <p id="bookAuthor">{{ authorList[item.authorId - 1].name }}</p>
         </van-col>
       </van-row>
     </div>
@@ -32,60 +32,22 @@
 </template>
 
 <script>
-import { httpCarouselPage, httpBooks } from "@/api/api";
+import { carouselList, books } from "@/data/book";
+import { authorList } from "@/data/author";
 
 export default {
   name: "Home",
   data() {
     return {
-      carousels: [
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573916504237&di=d9365d6117ee594dd7cb53cfd7130f0d&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h480%2F20180114%2Ff69c-fyqrewh9918851.jpg"
-      ],
-      books: [
-        {
-          bookName: "道德经",
-          gjAuthor: {
-            name: "李耳",
-            biName: "老子"
-          },
-          cover:
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1122844215,532756123&fm=26&gp=0.jpg"
-        }
-      ]
+      carousels: carouselList,
+      books: books,
+      authorList: authorList
     };
   },
   created() {
-    window.console.log("创建实例");
-    this.getCarousels();
-    this.getBooks();
+    window.console.log("首页");
   },
   methods: {
-    getCarousels() {
-      httpCarouselPage({
-        subject: "gj_home"
-      }).then(response => {
-        window.console.log(
-          "列表：" + JSON.stringify(response.data.data.records)
-        );
-        if (response.data.code === 0) {
-          this.carousels = response.data.data.records;
-        } else {
-          this.$toast(response.data.msg);
-        }
-      });
-    },
-    getBooks() {
-      httpBooks({
-        page: 1,
-        size: 10
-      }).then(response => {
-        if (response.data.code == 0) {
-          this.books = response.data.data.records;
-        } else {
-          this.$toast(response.data.msg);
-        }
-      });
-    },
     toDetail(id) {
       this.$router.push({ path: "/detail", query: { bookId: id } });
     }

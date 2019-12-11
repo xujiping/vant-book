@@ -1,7 +1,7 @@
 // 轮播图
 export const carouselList = [
     {
-        image: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573916504237&di=d9365d6117ee594dd7cb53cfd7130f0d&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h480%2F20180114%2Ff69c-fyqrewh9918851.jpg"
+        image:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576058030875&di=4a608cdadfb86f6c2599c2c37d1826d6&imgtype=0&src=http%3A%2F%2Ffile.xueda.com%2FNews%2F2019%2F5%2F21%2Fc57d6bc82da34e9.jpg'
     }
 ]
 
@@ -12,9 +12,9 @@ export const books = [
         bookName: "道德经",
         authorId: 1,
         intro:
-            '<div class="para" style="white-space: normal; font-size: 14px; word-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 28px; line-height: 24px; zoom: 1; caret-color: rgb(51, 51, 51); font-family: arial, 宋体, sans-serif;">    道德经》，春秋时期<a target="_blank" href="http://undefined" style="color: rgb(19, 110, 194); text-decoration: none;">老子</a>（李耳）的哲学作品，又称《道德真经》、《老子》、《五千言》、《老子五千文》，是中国古代先秦诸子分家前的一部著作，是道家哲学思想的重要来源。道德经分上下两篇，原文上篇《德经》、下篇《道经》，不分章，后改为《道经》37章在前，第38章之后为《德经》，并分为81章。</div><div class="para" style="white-space: normal; font-size: 14px; word-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 28px; line-height: 24px; zoom: 1; caret-color: rgb(51, 51, 51); font-family: arial, 宋体, sans-serif;">    《道德经》文本以哲学意义之“道德”为纲宗，论述修身、治国、用兵、养生之道，而多以政治为旨归，乃所谓“<a target="_blank" href="http://undefined" style="color: rgb(19, 110, 194); text-decoration: none;">内圣外王</a>”之学，文意深奥，包涵广博，被誉为万经之王。</div><div class="para" style="white-space: normal; font-size: 14px; word-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 28px; line-height: 24px; zoom: 1; caret-color: rgb(51, 51, 51); font-family: arial, 宋体, sans-serif;">    《道德经》是中国历史上最伟大的名著之一，对传统哲学、科学、政治、宗教等产生了深刻影响&nbsp;。据联合国教科文组织统计，《道德经》是除了《圣经》以外被译成外国文字发布量最多的文化名著。</div><p><br/></p>',
+            '<p style="color: rgb(51, 51, 51); line-height: 28px; font-family: verdana, arial; white-space: normal; text-indent: 2em;">    《道德经》又称《老子》，是中国古代先秦诸子分家前的一部著作，为其时诸子所共仰，传说是春秋时期的老子李耳所撰写，是道家哲学思想的重要来源。道德经分上下两篇，原文上篇《德经》、下篇《道经》，不分章，后改为《道经》在前，《德经》在后，并分为81章,全文共约五千字，是中国历史上首部完整的哲学著作。</p><p class="STYLE4" style="color: rgb(51, 51, 51); line-height: 28px; font-family: verdana, arial; white-space: normal;">    　　《道德经》常会被归属为道教学说。其实哲学上的道家，和宗教上的道教，是不能混为一谈的，但《道德经》作为道教基本教义的重要构成之一，被道教视为重要经典，其作者老子也被道教视为至上的三清尊神之一道德天尊的化身，又称太上老君，所以应该说道教吸纳了道家思想，道家思想完善了道教。同时，前面所说的哲学，并不能涵括《道德经》（修身立命、治国安邦、出世入世）的全貌。《道德经》提出了“无为而治”的主张,无为而治是道家的基本思想，也是其修行的基本方法。作为一种政治原则，“无为”在春秋末期已经出现。儒家也讲“无为而治”，如《论语·卫灵公》：“无为而治者，其舜也与？夫何为哉？恭己正南面而已矣”。朱熹认为“圣人德盛而民化，不待其有所作为也。“，实则表达了儒家的德治主张。使“无为而治”系统化而成为理论的是《老子》。他们认为统治者的一切作为都会破坏自然秩序，扰乱天下，祸害百姓。要求统治者无所作为，效法自然，让百姓自由发展。“无为而治”的理论根据是“道”，现实依据是变“乱”为“治”；“无为而治”的主要内容是“为无为”和“无为而无不为”，具体措施是“劝统治者少干涉”和“使民众无知无欲”。</p><p class="STYLE4" style="color: rgb(51, 51, 51); line-height: 28px; font-family: verdana, arial; white-space: normal;">    　　《道德经》并不像一般人所理解的那样，是一部论述道德的著作。事实上，道德二字各有不同的概念。道德经前三十七章讲道，后四十四章言德，简单说来，道是体，德是用，二者不能等同。</p><p><br/></p>',
         cover:
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1122844215,532756123&fm=26&gp=0.jpg",
-        download: "https://545c.com/file/14866724-410417802"
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576058167803&di=77c18b3c779246571a1a3bcafa8d685e&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F2653065549%2F0',
+        download: 'https://545c.com/file/14866724-413204103'
     }
 ]

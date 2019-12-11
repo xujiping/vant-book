@@ -1,16 +1,15 @@
 <template>
   <div>
-    <van-search
-      placeholder="请输入搜索关键词"
-      v-model="searchValue"
-      show-action
-      shape="round"
-      maxlength=20
-      @search="onSearch(searchValue)"
-      @clear="onClear"
-    >
-      <div slot="action" @click="onSearch(searchValue)">搜索</div>
-    </van-search>
+    <form action="/">
+      <van-search
+        placeholder="请输入搜索关键词"
+        v-model="searchValue"
+        shape="round"
+        @search="onSearch(searchValue)"
+        @clear="onClear"
+      >
+      </van-search>
+    </form>
 
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(carousel, index) in carousels" :key="index">
@@ -34,6 +33,10 @@
         </van-col>
       </van-row>
     </div>
+    <div class="footer">
+      <a href=''>鄂ICP备19016691号</a>
+      <p class="tips">网站部分内容转载至网络，如侵犯到原作者的相关权益，请联系我们，我们将及时处理。邮箱：xjpdyx@hotmail.com</p>
+    </div>
   </div>
 </template>
 
@@ -48,7 +51,7 @@ export default {
       carousels: carouselList,
       books: books,
       authorList: authorList,
-      searchValue: ''
+      searchValue: ""
     };
   },
   created() {
@@ -61,13 +64,13 @@ export default {
     onSearch(value) {
       let searchBookList = [];
       books.forEach(book => {
-        if(book.bookName.search(value)!=-1){
-            searchBookList.push(book)
-          }
-      })
+        if (book.bookName.search(value) != -1) {
+          searchBookList.push(book);
+        }
+      });
       this.books = searchBookList;
     },
-    onClear(){
+    onClear() {
       this.books = books;
     }
   }
@@ -77,6 +80,7 @@ export default {
 <style scoped>
 .books-panel {
   padding: 0 5px;
+  min-height: 500px;
 }
 
 #book-panel {
@@ -94,5 +98,14 @@ p {
 #bookAuthor {
   color: #666;
   font-size: 12px;
+}
+
+.footer{
+  margin-top: 20px;
+}
+
+.tips{
+  font-size: 10px;
+  color: #666;
 }
 </style>

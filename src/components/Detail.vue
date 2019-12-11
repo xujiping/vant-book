@@ -58,6 +58,8 @@ p {
   background-color: #fff;
   margin-top: 20px;
   margin-bottom: 40px;
+  text-align: left;
+  line-height: 1%;
 }
 
 .download {

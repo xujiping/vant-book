@@ -16,7 +16,10 @@ export default new Router({
         {
             path: '/',
             name: '默认',
-            redirect: '/home'
+            redirect: '/home',
+            meta: {
+                title: '古书屋'
+            }
         },
         {
             path: '/home',

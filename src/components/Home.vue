@@ -2,9 +2,15 @@
   <div>
     <van-search
       placeholder="请输入搜索关键词"
-      v-model="value"
-      background="#986724"
-    />
+      v-model="searchValue"
+      show-action
+      shape="round"
+      maxlength=20
+      @search="onSearch(searchValue)"
+      @clear="onClear"
+    >
+      <div slot="action" @click="onSearch(searchValue)">搜索</div>
+    </van-search>
 
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(carousel, index) in carousels" :key="index">
@@ -41,7 +47,8 @@ export default {
     return {
       carousels: carouselList,
       books: books,
-      authorList: authorList
+      authorList: authorList,
+      searchValue: ''
     };
   },
   created() {
@@ -50,6 +57,18 @@ export default {
   methods: {
     toDetail(id) {
       this.$router.push({ path: "/detail", query: { bookId: id } });
+    },
+    onSearch(value) {
+      let searchBookList = [];
+      books.forEach(book => {
+        if(book.bookName.search(value)!=-1){
+            searchBookList.push(book)
+          }
+      })
+      this.books = searchBookList;
+    },
+    onClear(){
+      this.books = books;
     }
   }
 };

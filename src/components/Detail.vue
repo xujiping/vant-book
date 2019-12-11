@@ -6,7 +6,7 @@
       </van-col>
       <van-col span="16">
         <p>{{ book.bookName }}</p>
-        <p>{{ book.author }}</p>
+        <p>{{ authorList[book.authorId - 1].name }}</p>
       </van-col>
     </van-row>
     <van-row class="intro">
@@ -15,13 +15,14 @@
       </van-col>
     </van-row>
     <van-row class="download">
-      <van-button type="primary" size="large" round="true">TXT下载</van-button>
+      <van-button type="primary" size="large" round="true" :url="book.download">下载</van-button>
     </van-row>
   </div>
 </template>
 
 <script>
 import { books } from "@/data/book";
+import { authorList } from "@/data/author";
 
 export default {
   name: "Detail",
@@ -30,7 +31,8 @@ export default {
   },
   data() {
     return {
-      book: books[this.$route.query.bookId - 1]
+      book: books[this.$route.query.bookId - 1],
+      authorList: authorList
     };
   },
   created() {
@@ -55,6 +57,7 @@ p {
   padding: 20px 10px;
   background-color: #fff;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .download {
